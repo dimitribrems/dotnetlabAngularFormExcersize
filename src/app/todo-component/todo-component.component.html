@@ -1,0 +1,13 @@
+<h3>ToDo list</h3>
+
+<form (ngSubmit)="saveForm()" [formGroup]="formGroup">
+    <input type="text" placeholder="To Do Item" formControlName="task">
+    <button type="submmit">Add to do</button>
+</form>
+
+
+<div>
+    <ul >
+        <li *ngFor="let item of ToDoList">{{item.task}} <input type="checkbox" (change)="MakeItemDone(item.id)" ></li>
+    </ul>
+</div>
